@@ -21,6 +21,7 @@ export class EquipeRepo {
 	adicionar(func: Funcionario): boolean {
 		if (this.equipe.find(f => f.usuario === func.usuario)) return false;
 		func.id = String(this.currentId++);
+		func.definirSenha(func.senha);
 		this.equipe.push(func);
 		this.persistir();
 		return true;
@@ -33,7 +34,17 @@ export class EquipeRepo {
 	}
 
 	fazerLogin(user: string, pass: string): Funcionario | undefined {
-		return this.equipe.find(f => f.autenticar(user, pass));
+		const funcionario = this.equipe.find(f => f.usuario === user);
+		if (!funcionario) return undefined;
+
+		if (!funcionario.autenticar(user, pass)) return undefined;
+
+		if (!Funcionario.senhaEstaCriptografada(funcionario.senha)) {
+			funcionario.definirSenha(pass);
+			this.persistir();
+		}
+
+		return funcionario;
 	}
 
 	private persistir() {

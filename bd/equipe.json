@@ -1,0 +1,20 @@
+[
+  {
+    "id": "1",
+    "nome": "Admin",
+    "telefone": "000",
+    "endereco": "Aerocode",
+    "usuario": "admin",
+    "senha": "scrypt$6826b461e9583ed3b9cd3ee5620a6da7$0aa746e5f3c19650c05dd2f6f71d986ebfa45af00fa279ae09ed0ac4135a75f11db6d48b2e0547f83de6d7ed1aeb8231c7541e311f18f05184a03bbecc74c531",
+    "nivelPermissao": "Administrador"
+  },
+  {
+    "id": "2",
+    "nome": "Daniel",
+    "telefone": "12...",
+    "endereco": "Fatec SJC",
+    "usuario": "daniel",
+    "senha": "scrypt$ed07919662a7c9bc2e3752990cd0d968$64631fcb63ca84774b16a2c53fce79db45a7a088ff4a22dcbf6b2a7a9e28a5572778ff351810177fb3b0b31395c40c983cf0872af22561e0ab616b86d70bd626",
+    "nivelPermissao": "Engenheiro"
+  }
+]
